@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  database: # database development name
+
+test:
+  <<: *default
+  database: # database test name
