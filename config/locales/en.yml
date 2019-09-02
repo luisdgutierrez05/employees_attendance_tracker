@@ -1,4 +1,24 @@
 # frozen_string_literal: true
 
 en:
-  hello: "Hello world"
+  models:
+    user:
+      errors:
+        invalid_date: 'must be a valid date'
+    entry:
+      errors:
+        invalid_datetime: 'must be a valid Date Time with format yyyy-mm-dd hh:mm:ss'
+        invalid_future_datetime: 'Date time cannot be in future'
+  exceptions:
+    invalid_credentials: 'Invalid credentials'
+    invalid_token: 'Invalid token'
+    missing_token: 'Missing token'
+    expired_token: 'Sorry, your token has expired. Please login to continue.'
+    expired_signature: 'Signature has expired'
+    jwt_decode_error: 'Not enough or too many segments'
+    invalid_page_number: 'Page number is invalid.'
+    invalid_date: 'must be a valid date'
+    invalid_user_id: 'must be a valid user Id'
+    invalid_period_name: 'must be a valid period name'
+    permission_denied: 'Permission denied'
+    invalid_route: 'Invalid route'

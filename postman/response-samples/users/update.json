@@ -1,0 +1,19 @@
+{
+  "data": {
+    "id": "515b9ece-fc41-45f4-9552-d0518e3ef7af",
+    "type": "users",
+    "attributes": {
+      "dni": "8765432901",
+      "first-name": "Employee 10",
+      "last-name": "RunaHR",
+      "email": "employee10@test.com",
+      "date-of-birth": "1987-08-31",
+      "admin": false,
+      "address": "Street 10",
+      "phone-number": "3002004000",
+      "start-date": "2017-02-01",
+      "end-date": "2016-02-02",
+      "auth-token": null
+    }
+  }
+}

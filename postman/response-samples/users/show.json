@@ -1,0 +1,19 @@
+{
+  "data": {
+    "id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+    "type": "users",
+    "attributes": {
+      "dni": "8765432901",
+      "first-name": "Employee 1",
+      "last-name": "RunaHR",
+      "email": "employee1@test.com",
+      "date-of-birth": "1987-08-31",
+      "admin": false,
+      "address": "Street 1",
+      "phone-number": "3002004000",
+      "start-date": "2017-02-01",
+      "end-date": null,
+      "auth-token": "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiYmZmYjE5ZjctYTcwYi00ZWYyLTljMWItOWU3NDExYzJiMjZjIiwiaXNzIjoiaXNzdWVyX25hbWUiLCJhdWQiOiJ1c2VyIiwiZXhwIjoxNTY3NDM4NzQxfQ.n_-3vnZHD83Xvk2HwrUUgLyLCdkt1jPVawZBW10HciM"
+    }
+  }
+}

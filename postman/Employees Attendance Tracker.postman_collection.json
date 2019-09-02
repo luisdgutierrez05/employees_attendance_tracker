@@ -1,0 +1,946 @@
+{
+  "info": {
+    "_postman_id": "a4048a05-2ee7-44e9-8985-3255e178e6b0",
+    "name": "Employees Attendance Tracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Index",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/users",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/users/bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              },
+              {
+                "key": "Accept",
+                "value": "application/vnd.api+json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": {\n        \"type\": \"users\",\n        \"attributes\": {\n            \"first_name\": \"Dev four\",\n            \"last_name\": \"Runa\",\n            \"dni\": \"32344654\",\n            \"email\": \"devfour@runa.com\",\n            \"phone_number\": \"4002003023\",\n            \"date_of_birth\": \"09-02-1990\",\n            \"position\": \"sales\",\n            \"start_date\": \"01-01-2017\",\n            \"password\": \"UOZ123456\",\n            \"address\": \"Ave 80\",\n            \"password_confirmation\": \"UOZ123456\"\n        }\n    }\n}"
+            },
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/users",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "type": "text",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": {\n        \"type\": \"users\",\n        \"attributes\": {\n            \"end_date\": \"02-02-2015\"\n        }\n    }\n}"
+            },
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/users/283dd289-a2a8-40d4-a3a6-9c2fe1d74c1c",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "283dd289-a2a8-40d4-a3a6-9c2fe1d74c1c"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Destroy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "type": "text",
+                "value": "application/vnd.api+json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/users/aaaaec58-ef22-4828-9dd4-011a6b751fae",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "aaaaec58-ef22-4828-9dd4-011a6b751fae"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Entries",
+      "item": [
+        {
+          "name": "Index",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by email",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries?email=employee1@test.com",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "employee1@test.com"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter by user_id",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Show",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries/6a5467d9-f632-4220-ba1c-48bc348d12b8",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries",
+                "6a5467d9-f632-4220-ba1c-48bc348d12b8"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Destroy",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries/57048601-b583-4485-b416-a60521dff03a",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries",
+                "57048601-b583-4485-b416-a60521dff03a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": {\n        \"type\": \"entries\",\n        \"attributes\": {\n            \"checkin_at\": \"2019-08-30 09:02:01\",\n            \"checkout_at\": \"2019-08-30 18:09:00\",\n            \"user_id\": \"bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c\",\n            \"observation\": \"\"\n        }\n    }\n}"
+            },
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "name": "Content-Type",
+                "type": "text",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"data\": {\n        \"type\": \"entries\",\n        \"attributes\": {\n        \t\"checkout_at\": \"2019-08-31 18:19:14\",\n            \"observation\": \"\"\n        }\n    }\n}"
+            },
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/entries/35fe39dc-b1a2-4db0-b2d8-528d10788620",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "entries",
+                "35fe39dc-b1a2-4db0-b2d8-528d10788620"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Reports",
+      "item": [
+        {
+          "name": "Per day",
+          "item": [
+            {
+              "name": "specific date (2019-08-30)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&date=2019-08-29",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2019-08-29"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "period (Today)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=today",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "today"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "period (Yesterday)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=yesterday",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "yesterday"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Per week",
+          "item": [
+            {
+              "name": "period (This Week)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=thisweek",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "thisweek"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "period (Last Week)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=lastweek",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "lastweek"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Per month",
+          "item": [
+            {
+              "name": "period (This Month)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=thismonth",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "thismonth"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "period (Last Month)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=lastmonth",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "lastmonth"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Per year",
+          "item": [
+            {
+              "name": "period (This Year)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=thisyear",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "thisyear"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "period (Last Year)",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{token}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c&period=lastyear",
+                  "protocol": "{{protocol}}",
+                  "host": [
+                    "{{server}}"
+                  ],
+                  "path": [
+                    "api",
+                    "v1",
+                    "reports"
+                  ],
+                  "query": [
+                    {
+                      "key": "user_id",
+                      "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                    },
+                    {
+                      "key": "period",
+                      "value": "lastyear"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
+        },
+        {
+          "name": "Index",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{protocol}}://{{server}}/api/v1/reports?user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+              "protocol": "{{protocol}}",
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "reports"
+              ],
+              "query": [
+                {
+                  "key": "user_id",
+                  "value": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Authenticate",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "86e9af2e-0307-4803-9937-ef75bf549ce1",
+            "exec": [
+              "var data = JSON.parse(responseBody);",
+              "postman.setEnvironmentVariable(\"token\", data.token);"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "name": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "{{admin_email}}",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "{{admin_password}}",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{protocol}}://{{server}}/auth/login",
+          "protocol": "{{protocol}}",
+          "host": [
+            "{{server}}"
+          ],
+          "path": [
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

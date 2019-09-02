@@ -1,0 +1,190 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "address": "Street 2",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee2@test.com",
+        "end-date": null,
+        "first-name": "Employee 2",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "857f91db-21ea-4a05-99a7-82f4592ee590",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 3",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee3@test.com",
+        "end-date": null,
+        "first-name": "Employee 3",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "5f30d9c4-aa28-4d24-8a18-36c113ef1a65",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 4",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee4@test.com",
+        "end-date": null,
+        "first-name": "Employee 4",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "59c01679-9519-4bb9-953d-1bbc8587cef9",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 5",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee5@test.com",
+        "end-date": null,
+        "first-name": "Employee 5",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "7584840f-4daf-4511-a6a1-b08310bd9cbe",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 6",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee6@test.com",
+        "end-date": null,
+        "first-name": "Employee 6",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "eb3c22b8-5867-46f9-bb2a-36408c8cdc1e",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 7",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee7@test.com",
+        "end-date": null,
+        "first-name": "Employee 7",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "fb698a18-36d7-4487-b8b1-56198b5ab678",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 8",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee8@test.com",
+        "end-date": null,
+        "first-name": "Employee 8",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "0c11c52e-6513-4f32-9490-3bf1e9e2cd8d",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 9",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee9@test.com",
+        "end-date": null,
+        "first-name": "Employee 9",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "a5c885a6-b7db-4dac-be67-2503d2ec0d88",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 10",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee10@test.com",
+        "end-date": null,
+        "first-name": "Employee 10",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "515b9ece-fc41-45f4-9552-d0518e3ef7af",
+      "type": "users"
+    },
+    {
+      "attributes": {
+        "address": "Street 11",
+        "admin": false,
+        "auth-token": null,
+        "date-of-birth": "1987-08-31",
+        "dni": "8765432901",
+        "email": "employee11@test.com",
+        "end-date": null,
+        "first-name": "Employee 11",
+        "last-name": "RunaHR",
+        "phone-number": "3002004000",
+        "start-date": "2017-02-01"
+      },
+      "id": "281d67c3-ff3e-441b-aefa-f8be368a526b",
+      "type": "users"
+    }
+  ],
+  "links": {
+    "first": "http://localhost:3000/api/v1/users?page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "last": "http://localhost:3000/api/v1/users?page%5Bnumber%5D=3&page%5Bsize%5D=10",
+    "next": "http://localhost:3000/api/v1/users?page%5Bnumber%5D=2&page%5Bsize%5D=10",
+    "prev": null,
+    "self": "http://localhost:3000/api/v1/users?page%5Bnumber%5D=1&page%5Bsize%5D=10"
+  },
+  "meta": {
+    "current-page": 1,
+    "first-page": true,
+    "last-page": false,
+    "next-page": 2,
+    "previous-page": null,
+    "total-count": 30,
+    "total-pages": 3
+  }
+}

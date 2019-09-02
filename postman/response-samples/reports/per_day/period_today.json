@@ -1,0 +1,31 @@
+{
+  "data": [
+    {
+      "id": "969176a8-deb3-4bf2-8cbc-15af0dc01177",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "09-02-2019 09:03:01 AM",
+        "checkout-at": "09-02-2019 18:09:00 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.1,
+        "observation": ""
+      }
+    }
+  ],
+  "links": {
+    "self": "http://localhost:3000/api/v1/reports?page%5Bnumber%5D=1&page%5Bsize%5D=10&period=today&user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+    "first": "http://localhost:3000/api/v1/reports?page%5Bnumber%5D=1&page%5Bsize%5D=10&period=today&user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+    "prev": null,
+    "next": null,
+    "last": "http://localhost:3000/api/v1/reports?page%5Bnumber%5D=1&page%5Bsize%5D=10&period=today&user_id=bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c"
+  },
+  "meta": {
+    "current-page": 1,
+    "next-page": null,
+    "previous-page": null,
+    "first-page": true,
+    "last-page": true,
+    "total-pages": 1,
+    "total-count": 1
+  }
+}

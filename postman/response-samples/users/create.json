@@ -1,0 +1,19 @@
+{
+  "data": {
+    "id": "643c8392-27ba-4609-94b2-ec99ee38578f",
+    "type": "users",
+    "attributes": {
+      "dni": "32344654",
+      "first-name": "Dev four",
+      "last-name": "Runa",
+      "email": "devfour@runa.com",
+      "date-of-birth": "1990-02-09",
+      "admin": false,
+      "address": "Ave 80",
+      "phone-number": "4002003023",
+      "start-date": "2017-01-01",
+      "end-date": null,
+      "auth-token": null
+    }
+  }
+}

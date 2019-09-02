@@ -1,0 +1,130 @@
+{
+  "data": [
+    {
+      "id": "35fe39dc-b1a2-4db0-b2d8-528d10788620",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-31-2019 09:00:01 AM",
+        "checkout-at": "08-31-2019 18:19:14 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.32,
+        "observation": ""
+      }
+    },
+    {
+      "id": "d10ce4c5-28cf-4c81-bdf7-08e48b002547",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-30-2019 09:02:01 AM",
+        "checkout-at": "08-30-2019 18:09:00 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.116,
+        "observation": ""
+      }
+    },
+    {
+      "id": "68bf6a97-c024-44a6-888e-83913e377d62",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-29-2019 09:02:00 AM",
+        "checkout-at": "08-29-2019 18:05:16 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.054,
+        "observation": ""
+      }
+    },
+    {
+      "id": "1a4d8e08-3116-459f-8399-8e21a983fa35",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-28-2019 08:55:00 AM",
+        "checkout-at": "08-28-2019 17:30:00 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 7.583,
+        "observation": ""
+      }
+    },
+    {
+      "id": "97bf19fd-82fb-4d2a-ae27-513736212fc8",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-27-2019 09:07:04 AM",
+        "checkout-at": "08-27-2019 18:03:10 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 7.935,
+        "observation": ""
+      }
+    },
+    {
+      "id": "38631ab7-361a-474e-8ad5-0872fc1f2cde",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-26-2019 09:01:00 AM",
+        "checkout-at": "08-26-2019 18:05:00 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.067,
+        "observation": ""
+      }
+    },
+    {
+      "id": "10f88cca-8aa0-42e9-9edb-4ac0bc9cef8e",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-25-2019 09:11:00 AM",
+        "checkout-at": "08-25-2019 18:15:00 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.067,
+        "observation": ""
+      }
+    },
+    {
+      "id": "4473715a-9a01-49f6-ae53-ac51adc28cd0",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-24-2019 09:18:10 AM",
+        "checkout-at": "08-24-2019 17:35:10 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 7.283,
+        "observation": ""
+      }
+    },
+    {
+      "id": "818dbe3b-f8e9-454c-a15a-301d3c84ccaa",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-23-2019 09:04:02 AM",
+        "checkout-at": "08-23-2019 18:15:01 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.183,
+        "observation": ""
+      }
+    },
+    {
+      "id": "ecc13518-5b16-4976-a480-33c2c22233a7",
+      "type": "entries",
+      "attributes": {
+        "checkin-at": "08-22-2019 09:00:12 AM",
+        "checkout-at": "08-22-2019 18:01:07 PM",
+        "user-id": "bffb19f7-a70b-4ef2-9c1b-9e7411c2b26c",
+        "worked-hours": 8.015,
+        "observation": ""
+      }
+    }
+  ],
+  "links": {
+    "self": "http://localhost:3000/api/v1/entries?email=employee1%40test.com&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "first": "http://localhost:3000/api/v1/entries?email=employee1%40test.com&page%5Bnumber%5D=1&page%5Bsize%5D=10",
+    "prev": null,
+    "next": "http://localhost:3000/api/v1/entries?email=employee1%40test.com&page%5Bnumber%5D=2&page%5Bsize%5D=10",
+    "last": "http://localhost:3000/api/v1/entries?email=employee1%40test.com&page%5Bnumber%5D=2&page%5Bsize%5D=10"
+  },
+  "meta": {
+    "current-page": 1,
+    "next-page": 2,
+    "previous-page": null,
+    "first-page": true,
+    "last-page": false,
+    "total-pages": 2,
+    "total-count": 12
+  }
+}

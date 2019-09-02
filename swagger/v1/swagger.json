@@ -1,0 +1,1365 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "basePath": "/api/v1",
+  "paths": {
+    "/auth/login": {
+      "post": {
+        "summary": "Creates authentication",
+        "tags": [
+          "Login"
+        ],
+        "consumes": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "auth",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "admin@runahr.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "Password123!"
+                }
+              },
+              "required": [
+                "email",
+                "password"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "user logged in"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/entries": {
+      "get": {
+        "summary": "Retrieves all entries",
+        "tags": [
+          "Entries"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates an entry",
+        "tags": [
+          "Entries"
+        ],
+        "consumes": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "entry",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": "entries",
+                    "attributes": {
+                      "type": "object",
+                      "required": [
+                        "checkin_at",
+                        "user_id"
+                      ],
+                      "properties": {
+                        "checkin_at": {
+                          "type": "string",
+                          "example": "2019-09-03 01:32:38 UTC"
+                        },
+                        "observation": {
+                          "type": "string",
+                          "example": "observation sample"
+                        },
+                        "user_id": {
+                          "type": "string",
+                          "example": "a7f47d94-6601-4658-b35e-f28b6da248a0"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "entry created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/entries?user_id={user_id}": {
+      "get": {
+        "summary": "Retrieves entries of user",
+        "tags": [
+          "Entries"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/entries?email={email}": {
+      "get": {
+        "summary": "Retrieves entries of user",
+        "tags": [
+          "Entries"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "Email"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/entries/{id}": {
+      "put": {
+        "summary": "Update Entry",
+        "tags": [
+          "Entries"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "Entry ID"
+          },
+          {
+            "name": "entry",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": "entries",
+                    "attributes": {
+                      "type": "object",
+                      "properties": {
+                        "checkout_at": {
+                          "type": "string",
+                          "example": "2019-09-03 10:32:38 UTC"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entry updated"
+          },
+          "404": {
+            "description": "entry not found"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieves a entry",
+        "tags": [
+          "Entries"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "Entry ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entry found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          },
+          "404": {
+            "description": "entry not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Destroy Entry",
+        "tags": [
+          "Entries"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "Entry ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Entry deleted"
+          },
+          "404": {
+            "description": "Entry not found"
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}": {
+      "get": {
+        "summary": "Retrieves all entries",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&date={date}": {
+      "get": {
+        "summary": "Retrieves entries by specific date",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          },
+          {
+            "name": "date",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "Date"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=today": {
+      "get": {
+        "summary": "Retrieves entries from today",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=yesterday": {
+      "get": {
+        "summary": "Retrieves entries from yesterday",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=thisweek": {
+      "get": {
+        "summary": "Retrieves entries from this week",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=lastweek": {
+      "get": {
+        "summary": "Retrieves entries from last week",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=thismonth": {
+      "get": {
+        "summary": "Retrieves entries from this month",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=lastmonth": {
+      "get": {
+        "summary": "Retrieves entries from last month",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=thisyear": {
+      "get": {
+        "summary": "Retrieves entries from this year",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/reports?user_id={user_id}&period=lastyear": {
+      "get": {
+        "summary": "Retrieves entries from last year",
+        "tags": [
+          "Reports"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of entries",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "checkin_at": {
+                  "type": "string"
+                },
+                "checkout_at": {
+                  "type": "string"
+                },
+                "observation": {
+                  "type": "string"
+                },
+                "user_id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "checkin_at",
+                "user_id"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Retrieves all users",
+        "tags": [
+          "Users"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of users",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "last_name": {
+                  "type": "string"
+                },
+                "dni": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone_number": {
+                  "type": "string"
+                },
+                "date_of_birth": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first_name",
+                "last_name",
+                "dni",
+                "email",
+                "phone_number",
+                "date_of_birth",
+                "position",
+                "start_date",
+                "address",
+                "password",
+                "password_confirmation"
+              ]
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Creates a user",
+        "tags": [
+          "Users"
+        ],
+        "consumes": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "user",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": "users",
+                    "attributes": {
+                      "type": "object",
+                      "required": [
+                        "first_name",
+                        "last_name",
+                        "dni",
+                        "email",
+                        "phone_number",
+                        "date_of_birth",
+                        "position",
+                        "start_date",
+                        "address",
+                        "password",
+                        "password_confirmation"
+                      ],
+                      "properties": {
+                        "first_name": {
+                          "type": "string",
+                          "example": "Employee"
+                        },
+                        "last_name": {
+                          "type": "string",
+                          "example": "RunaHR"
+                        },
+                        "dni": {
+                          "type": "string",
+                          "example": "8765432901"
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "employee@test.com"
+                        },
+                        "phone_number": {
+                          "type": "string",
+                          "example": "3002004000"
+                        },
+                        "date_of_birth": {
+                          "type": "string",
+                          "example": "1991-09-02"
+                        },
+                        "position": {
+                          "type": "string",
+                          "example": "backend"
+                        },
+                        "start_date": {
+                          "type": "string",
+                          "example": "2017-09-02"
+                        },
+                        "address": {
+                          "type": "string",
+                          "example": "Av. 100"
+                        },
+                        "password": {
+                          "type": "string",
+                          "example": "Password123!"
+                        },
+                        "password_confirmation": {
+                          "type": "string",
+                          "example": "Password123!"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "user created"
+          },
+          "422": {
+            "description": "invalid request"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "put": {
+        "summary": "Update User",
+        "tags": [
+          "Users"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          },
+          {
+            "name": "user",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "type": "users",
+                    "attributes": {
+                      "type": "object",
+                      "properties": {
+                        "phone_number": {
+                          "type": "string",
+                          "example": "3015006110"
+                        },
+                        "date_of_birth": {
+                          "type": "string",
+                          "example": "1985-10-10"
+                        },
+                        "position": {
+                          "type": "string",
+                          "example": "frontend"
+                        },
+                        "start_date": {
+                          "type": "string",
+                          "example": "2016-05-05"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User updated"
+          },
+          "404": {
+            "description": "user not found"
+          }
+        }
+      },
+      "get": {
+        "summary": "Retrieves a user",
+        "tags": [
+          "Users"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User found",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "first_name": {
+                  "type": "string"
+                },
+                "last_name": {
+                  "type": "string"
+                },
+                "dni": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "phone_number": {
+                  "type": "string"
+                },
+                "date_of_birth": {
+                  "type": "string"
+                },
+                "position": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "first_name",
+                "last_name",
+                "dni",
+                "email",
+                "phone_number",
+                "date_of_birth",
+                "position",
+                "start_date",
+                "address",
+                "password",
+                "password_confirmation"
+              ]
+            }
+          },
+          "404": {
+            "description": "user not found"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Destroy User",
+        "tags": [
+          "Users"
+        ],
+        "produces": [
+          "application/json",
+          "application/vnd.api+json"
+        ],
+        "security": [
+          {
+            "Bearer": {
+            }
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "type": "string",
+            "required": true,
+            "description": "User ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "User deleted"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Bearer": {
+      "type": "apiKey",
+      "description": "Bearer token",
+      "name": "Authorization",
+      "in": "header",
+      "scheme": "bearer",
+      "bearerFormat": "JWT"
+    }
+  }
+}
