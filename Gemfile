@@ -23,7 +23,7 @@ gem 'jwt', '~> 2.2', '>= 2.2.1'
 gem 'pg', '~> 1.1', '>= 1.1.4'
 
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
